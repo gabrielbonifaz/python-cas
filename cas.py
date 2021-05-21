@@ -380,7 +380,8 @@ class CASClientWithSAMLV1(CASClientV2, SingleLogoutMixin):
             saml_validate_url,
             self.get_saml_assertion(ticket),
             params=params,
-            headers=headers)
+            headers=headers,
+            verify=False,)
 
     @classmethod
     def get_saml_assertion(cls, ticket):
